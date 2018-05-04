@@ -1,9 +1,9 @@
 // using System.Collections.Generic;
 // using System;
 // using Microsoft.AspNetCore.Mvc;
-// using ToDoListApp.Models;
+// using HairSalonApp.Models;
 //
-// namespace ToDoListApp.Controllers
+// namespace HairSalonApp.Controllers
 // {
 //     public class CategoriesController : Controller
 //     {

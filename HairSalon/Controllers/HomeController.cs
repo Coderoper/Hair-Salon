@@ -1,9 +1,9 @@
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
-using ToDoListApp.Models;
+using HairSalonApp.Models;
 using System;
 
-namespace ToDoListApp.Controllers
+namespace HairSalonApp.Controllers
 {
     public class HomeController : Controller
     {

@@ -1,11 +1,11 @@
 // using Microsoft.VisualStudio.TestTools.UnitTesting;
 // using Microsoft.AspNetCore.Mvc;
 // using System.Collections.Generic;
-// using ToDoListApp.Controllers;
-// using ToDoListApp.Models;
+// using HairSalonApp.Controllers;
+// using HairSalonApp.Models;
 // using System;
 //
-// namespace ToDoListApp.Tests
+// namespace HairSalonApp.Tests
 // {
 //     [TestClass]
 //     public class HomeControllerTest

@@ -2,7 +2,7 @@
 using System.IO;
 using Microsoft.AspNetCore.Hosting;
 
-namespace ToDoListApp
+namespace HairSalonApp
 {
     public class Program
     {

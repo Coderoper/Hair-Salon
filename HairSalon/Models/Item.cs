@@ -1,9 +1,9 @@
 using System.Collections.Generic;
 using MySql.Data.MySqlClient;
-using ToDoListApp;
+using HairSalonApp;
 using System;
 
-namespace ToDoListApp.Models
+namespace HairSalonApp.Models
 {
   public class Item
   {

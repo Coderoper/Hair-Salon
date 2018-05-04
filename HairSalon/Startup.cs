@@ -6,7 +6,7 @@ using Microsoft.Extensions.DependencyInjection;
 using MySql.Data.MySqlClient;
 
 
-namespace ToDoListApp
+namespace HairSalonApp
 {
     public class Startup
     {
@@ -36,13 +36,13 @@ namespace ToDoListApp
             });
             app.Run(async (context) =>
             {
-                await context.Response.WriteAsync("Hello World!");
+                await context.Response.WriteAsync("Startup Page");
             });
         }
 
     }
     public static class DBConfiguration
     {
-        public static string ConnectionString = "server=localhost;user id=root;password=root;port=8889;database=todo;";
+        public static string ConnectionString = "server=localhost;user id=root;password=root;port=8889;database=austin_roberts;";
     }
 }

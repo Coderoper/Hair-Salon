@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using MySql.Data.MySqlClient;
 
-namespace ToDoListApp.Models
+namespace HairSalonApp.Models
 {
   public class Category
   {

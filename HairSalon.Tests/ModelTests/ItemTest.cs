@@ -1,11 +1,11 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using ToDoListApp.Models;
+using HairSalonApp.Models;
 using System.Collections.Generic;
 using System;
 
 
 
-namespace ToDoListApp.Tests
+namespace HairSalonApp.Tests
 {
 
     [TestClass]

@@ -1,3 +1,4 @@
+
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using HairSalonApp.Models;
@@ -7,50 +8,50 @@ namespace HairSalonApp.Controllers
 {
     public class HomeController : Controller
     {
-        // [HttpGet("/categories/{categoryId}/items/new")]
-        // public ActionResult CreateForm(int categoryId)
-        // {
-        //   Dictionary<string, object> model = new Dictionary<string, object>();
-        //   Category category = Category.Find(categoryId);
-        //   return View(category);
-        // }
-        // [HttpGet("/categories/{categoryId}/items/{itemId}")]
-        // public ActionResult Details(int categoryId, int itemId)
-        // {
-        //   Item item = Item.Find(itemId);
-        //   Dictionary<string, object> model = new Dictionary<string, object>();
-        //   Category category = Category.Find(categoryId);
-        //   model.Add("item", item);
-        //   model.Add("category", category);
-        //   return View(item);
-        // }
-        [HttpGet("/items")]
+        [HttpGet("/stylists/{stylistId}/clients/new")]
+        public ActionResult CreateForm(int stylistId)
+        {
+          Dictionary<string, object> model = new Dictionary<string, object>();
+          Stylist stylist = Stylist.Find(stylistId);
+          return View(stylist);
+        }
+        [HttpGet("/stylists/{stylistId}/clients/{clientId}")]
+        public ActionResult Details(int stylistId, int clientId)
+        {
+          Client client = Client.Find(clientId);
+          Dictionary<string, object> model = new Dictionary<string, object>();
+          Stylist stylist = Stylist.Find(stylistId);
+          model.Add("client", client);
+          model.Add("stylist", stylist);
+          return View(client);
+        }
+        [HttpGet("/clients")]
         public ActionResult Index()
         {
           // return new EmptyResult();
-          List<Item> allItems = Item.GetAll();
+          List<Client> allClients = Client.GetAll();
           // return View();
           // return new EmptyResult();
-          return View(allItems);
+          return View(allClients);
         }
 
-        [HttpGet("/items/new")]
+        [HttpGet("/clients/new")]
         public ActionResult CreateForm()
         {
             return View();
         }
-        [HttpPost("/items")]
+        [HttpPost("/clients")]
         public ActionResult Create()
         {
-          Item newItem = new Item (Request.Form["new-item"]);
-          newItem.Save();
-          List<Item> allItems = Item.GetAll();
-          return View("Index", allItems);
+          Client newClient = new Client (Request.Form["new-client"]);
+          newClient.Save();
+          List<Client> allClients = Client.GetAll();
+          return View("Index", allClients);
         }
-        [HttpPost("/items/delete")]
+        [HttpPost("/clients/delete")]
         public ActionResult DeleteAll()
         {
-            // Item.ClearAll();
+            // Client.ClearAll();
             return View();
         }
     }

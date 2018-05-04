@@ -9,13 +9,13 @@ namespace HairSalonApp.Tests
 {
 
     [TestClass]
-    public class ItemTests : IDisposable
+    public class ClientTests : IDisposable
     {
         public void Dispose()
         {
-            Item.DeleteAll();
+            Client.DeleteAll();
         }
-        public ItemTests()
+        public ClientTests()
         {
             DBConfiguration.ConnectionString = "server=localhost;user id=root;password=root;port=8889;database=todo_test;";
         }
@@ -24,40 +24,40 @@ namespace HairSalonApp.Tests
         // {
         //   //Arrange
         //   //Act
-        //   int result = Item.GetAll().Count;
+        //   int result = Client.GetAll().Count;
         //
         //   //Assert
         //   Assert.AreEqual(0, result);
         // }
         // [TestMethod]
-        // public void Equals_ReturnsTrueIfDescriptionsAreTheSame_Item()
+        // public void Equals_ReturnsTrueIfDescriptionsAreTheSame_Client()
         // {
         //   // Arrange, Act
-        //   Item firstItem = new Item("Mow the lawn");
-        //   Item secondItem = new Item("Mow the lawn");
+        //   Client firstClient = new Client("Mow the lawn");
+        //   Client secondClient = new Client("Mow the lawn");
         //
         //   // Assert
-        //   Assert.AreEqual(firstItem, secondItem);
+        //   Assert.AreEqual(firstClient, secondClient);
         // }
         // [TestMethod]
-        // public void Save_SavesToDatabase_ItemList()
+        // public void Save_SavesToDatabase_ClientList()
         // {
         //   //Arrange
-        //   Item testItem = new Item("Mow the lawn");
+        //   Client testClient = new Client("Mow the lawn");
         //
         //   //Act
-        //   testItem.Save();
-        //   List<Item> result = Item.GetAll();
+        //   testClient.Save();
+        //   List<Client> result = Client.GetAll();
         //   Console.WriteLine(result.Count);
-        //   foreach(Item element in result)
+        //   foreach(Client element in result)
         //   {
         //     Console.WriteLine("result: " + result);
         //   }
         //
         //
-        //   List<Item> testList = new List<Item>{testItem};
+        //   List<Client> testList = new List<Client>{testClient};
         //   Console.WriteLine(testList.Count);
-        //   Console.WriteLine("testItem "+testItem);
+        //   Console.WriteLine("testClient "+testClient);
         //   Console.WriteLine("testList " +testList);
         //   //Assert
         //   CollectionAssert.AreEqual(testList, result);
@@ -67,14 +67,14 @@ namespace HairSalonApp.Tests
         public void Save_AssignsIdToObject_Id()
         {
           //Arranges
-          Item testItem = new Item("Mow the lawn");
+          Client testClient = new Client("Mow the lawn");
 
           //Act
-          testItem.Save();
-          Item savedItem = Item.GetAll()[0];
+          testClient.Save();
+          Client savedClient = Client.GetAll()[0];
 
-          int result = savedItem.GetId();
-          int testId = testItem.GetId();
+          int result = savedClient.GetId();
+          int testId = testClient.GetId();
 
           Console.WriteLine("testId: " + testId);
           Console.WriteLine("result: " + result);
@@ -82,17 +82,17 @@ namespace HairSalonApp.Tests
           Assert.AreEqual(testId, result);
         }
         [TestMethod]
-        public void Find_FindsItemInDatabase_Item()
+        public void Find_FindsClientInDatabase_Client()
         {
           //Arrange
-          Item testItem = new Item("Mow the lawn");
-          testItem.Save();
+          Client testClient = new Client("Mow the lawn");
+          testClient.Save();
 
           //Act
-          Item foundItem = Item.Find(testItem.GetId());
+          Client foundClient = Client.Find(testClient.GetId());
 
           //Assert
-          Assert.AreEqual(testItem, foundItem);
+          Assert.AreEqual(testClient, foundClient);
         }
 
     }

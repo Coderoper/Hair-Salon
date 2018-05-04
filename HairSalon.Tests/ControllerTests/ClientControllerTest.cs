@@ -8,13 +8,13 @@
 // namespace HairSalonApp.Tests
 // {
 //     [TestClass]
-//     public class HomeControllerTest
+//     public class ClientControllerTest
 //     {
 //       [TestMethod]
 //         public void Index_ReturnsCorrectView_True()
 //         {
 //             //Arrange
-//             HomeController controller = new HomeController();
+//             ClientController controller = new ClientController();
 //
 //             //Act
 //             ActionResult indexView = controller.Index();
@@ -22,10 +22,10 @@
 //             Assert.IsInstanceOfType(indexView, typeof(ViewResult));
 //         }
 //       [TestMethod]
-//       public void Index_HasCorrectModelType_ItemList()
+//       public void Index_HasCorrectModelType_ClientList()
 //       {
 //           //Arrange
-//           ViewResult indexView = new HomeController().Index() as ViewResult;
+//           ViewResult indexView = new ClientController().Index() as ViewResult;
 //
 //           //Act
 //           var result = indexView.ViewData.Model;
@@ -33,8 +33,8 @@
 //           Console.WriteLine(result);
 //
 //           //Assert
-//           Assert.IsTrue(result.GetType() == typeof(List<Item>));
-//           Assert.IsInstanceOfType(result, typeof(List<Item>));
+//           Assert.IsTrue(result.GetType() == typeof(List<Client>));
+//           Assert.IsInstanceOfType(result, typeof(List<Client>));
 //       }
 //       // public ActionResult Index()
 //       // {

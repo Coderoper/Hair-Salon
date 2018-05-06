@@ -25,34 +25,34 @@ namespace HairSalonApp.Controllers
           model.Add("stylist", stylist);
           return View(client);
         }
-        [HttpGet("/clients")]
-        public ActionResult Index()
-        {
-          // return new EmptyResult();
-          List<Client> allClients = Client.GetAll();
-          // return View();
-          // return new EmptyResult();
-          return View(allClients);
-        }
-
-        [HttpGet("/clients/new")]
-        public ActionResult CreateForm()
-        {
-            return View();
-        }
-        [HttpPost("/clients")]
-        public ActionResult Create()
-        {
-          Client newClient = new Client (Request.Form["new-client"]);
-          newClient.Save();
-          List<Client> allClients = Client.GetAll();
-          return View("Index", allClients);
-        }
-        [HttpPost("/clients/delete")]
-        public ActionResult DeleteAll()
-        {
-            // Client.ClearAll();
-            return View();
-        }
+    //     [HttpGet("/clients")]
+    //     public ActionResult Index()
+    //     {
+    //       // return new EmptyResult();
+    //       List<Client> allClients = Client.GetAll();
+    //       // return View();
+    //       // return new EmptyResult();
+    //       return View(allClients);
+    //     }
+    //
+    //     [HttpGet("/clients/new")]
+    //     public ActionResult CreateForm()
+    //     {
+    //         return View();
+    //     }
+    //     [HttpPost("/clients")]
+    //     public ActionResult Create()
+    //     {
+    //       Client newClient = new Client (Request.Form["new-client"]);
+    //       newClient.Save();
+    //       List<Client> allClients = Client.GetAll();
+    //       return View("Index", allClients);
+    //     }
+    //     [HttpPost("/clients/delete")]
+    //     public ActionResult DeleteAll()
+    //     {
+    //         // Client.ClearAll();
+    //         return View();
+    //     }
     }
 }

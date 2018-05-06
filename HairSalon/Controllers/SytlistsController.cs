@@ -11,8 +11,8 @@ namespace HairSalonApp.Controllers
         [HttpGet("/stylists")]
         public ActionResult Index()
         {
-            List<Stylist> allCategories = Stylist.GetAll();
-            return View(allCategories);
+            List<Stylist> allStylists = Stylist.GetAll();
+            return View(allStylists);
         }
 
         [HttpGet("/stylists/new")]
@@ -25,8 +25,8 @@ namespace HairSalonApp.Controllers
         public ActionResult Create()
         {
             Stylist newStylist = new Stylist(Request.Form["stylist-name"]);
-            List<Stylist> allCategories = Stylist.GetAll();
-            return View("Index", allCategories);
+            List<Stylist> allStylists = Stylist.GetAll();
+            return View("Index", allStylists);
         }
 
         [HttpGet("/stylists/{id}")]
@@ -34,9 +34,9 @@ namespace HairSalonApp.Controllers
         {
             Dictionary<string, object> model = new Dictionary<string, object>();
             Stylist selectedStylist = Stylist.Find(id);
-            List<Stylist> stylistClients = selectedStylist.GetStylists();
+            List<Stylist> stylistClients = selectedStylist.GetSylist();
             model.Add("stylist", selectedStylist);
-            model.Add("stylists", stylistClients);
+            model.Add("clients", stylistClients);
             return View(model);
         }
 
@@ -49,8 +49,8 @@ namespace HairSalonApp.Controllers
           string StylistDescription = Request.Form["Stylist-name"];
           Stylist newStylist = new Stylist(StylistDescription);
           foundStylist.AddStylist(newStylist);
-          List<Stylist> stylistClients = foundStylist.GetStylists();
-          model.Add("items", stylistClients);
+          List<Stylist> stylistClients = foundStylist.GetSylist();
+          model.Add("clients", stylistClients);
           model.Add("stylist", foundStylist);
           return View("Details", model);
         }
